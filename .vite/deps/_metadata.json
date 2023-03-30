@@ -1,0 +1,13 @@
+{
+  "hash": "72dbcb97",
+  "browserHash": "43aa5bbb",
+  "optimized": {
+    "@escook/request-miniprogram": {
+      "src": "../../node_modules/@escook/request-miniprogram/miniprogram_dist/index.js",
+      "file": "@escook_request-miniprogram.js",
+      "fileHash": "6c329671",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}
