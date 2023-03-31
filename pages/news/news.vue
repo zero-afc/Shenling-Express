@@ -1,6 +1,6 @@
 <template>
   <view>
-    我的
+    消息页
   </view>
 </template>
 

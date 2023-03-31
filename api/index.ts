@@ -1,12 +1,11 @@
 import Axios from "./axios"
 
 const axios = Axios.create({
-  baseUrl: "https://api-hmugo-web.itheima.net/api/public/v1"
+  baseUrl: "http://god-express-gateway-t.itheima.net/driver"
 })
 
 axios.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
-  console.log("config：", config);
   return config;
 }, function (error) {
   // 对请求错误做些什么
@@ -22,13 +21,10 @@ axios.interceptors.request.use(function (config) {
 //   return Promise.reject(error);
 // });
 
-axios.get<BaseData<Array<any>>>("/home/swiperdata").then(res => {
-  console.log(res.message);
-})
-
 export interface BaseData<T> {
-  message : T
-  meta : { mas : string, status : number }
+  code : number
+  data : T
+  msg : string
 }
 
-export { axios }
+export default axios

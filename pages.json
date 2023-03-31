@@ -1,24 +1,29 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/index/index",
+      "path": "pages/task/task",
       "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false,
+        "navigationStyle": "custom"
       }
-    }, {
-      "path": "pages/cart/cart",
+    },
+    {
+      "path": "pages/login/login",
       "style": {
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
-
-    }, {
+    },
+    {
+      "path": "pages/news/news",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "pages/my/my",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-    }, {
-      "path": "pages/cate/cate",
       "style": {
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
@@ -26,40 +31,31 @@
     }
   ],
   "globalStyle": {
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "黑马优购",
-    "navigationBarBackgroundColor": "#c00000",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "神领快递",
+    "navigationBarBackgroundColor": "#ffffff",
     "backgroundColor": "#F8F8F8"
   },
+  "subPackages": [{
+    "root": "subpkg",
+    "pages": []
+  }],
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#c00000",
-    "list": [
-      {
-        "text": "首页",
-        "pagePath": "pages/index/index",
-        "iconPath": "static/tab_icons/home.png",
-        "selectedIconPath": "static/tab_icons/home-active.png"
-      },
-      {
-        "text": "分类",
-        "pagePath": "pages/cate/cate",
-        "iconPath": "static/tab_icons/cate.png",
-        "selectedIconPath": "static/tab_icons/cate-active.png"
-      },
-      {
-        "text": "购物车",
-        "pagePath": "pages/cart/cart",
-        "iconPath": "static/tab_icons/cart.png",
-        "selectedIconPath": "static/tab_icons/cart-active.png"
-      },
-      {
-        "text": "我的",
-        "pagePath": "pages/my/my",
-        "iconPath": "static/tab_icons/my.png",
-        "selectedIconPath": "static/tab_icons/my-active.png"
-      }
-    ]
+    "list": [{
+      "text": "任务",
+      "pagePath": "pages/task/task"
+    }, {
+      "text": "消息",
+      "pagePath": "pages/news/news"
+    }, {
+      "text": "我的",
+      "pagePath": "pages/my/my"
+    }, {
+      "text": "登录",
+      "pagePath": "pages/login/login"
+    }]
   },
   "uniIdRouter": {}
 }

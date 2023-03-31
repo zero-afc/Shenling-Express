@@ -29,7 +29,7 @@ export default class Axios {
   private request<T>(type : RequestType = "GET", url : string, options : any = {}) {
     this.interceptors.request.forEach((item) => {
       const { resolved, rejected } = item
-      // 请求之前
+      // 待处理：请求之前
       if (isFunction(resolved)) resolved(options)
       // 待处理：请求之前的失败
       // if (isFunction(rejected)) rejected({ message: "错误" }) 
