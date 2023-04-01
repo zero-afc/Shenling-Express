@@ -6,6 +6,10 @@ const axios = Axios.create({
 
 axios.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
+  const token = uni.getStorageSync("token")
+  if (token) {
+    config.header!.Authorization = token
+  }
   return config;
 }, function (error) {
   // 对请求错误做些什么

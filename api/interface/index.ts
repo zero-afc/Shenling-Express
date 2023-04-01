@@ -3,14 +3,14 @@ export type RequestType = "GET" | "POST" | "PUT" | "DELETE"
 export interface BaseConfig {
   baseUrl ?: string
   timeout ?: number
-  headers ?: any
+  header ?: any
 }
 
 export namespace Http {
   export interface Config {
     url : string
     method ?: RequestType
-    headers ?: Record<keyof any, any>
+    header ?: Record<string, any>
   }
   export interface BaseResponse<T = any> {
     cookies : Array<any>
@@ -22,7 +22,7 @@ export namespace Http {
   export type Option = Partial<{
     dataType : string
     responseType : string
-  } & Pick<Config, "headers">>
+  } & Pick<Config, "header">>
   export interface OverallOptions<T> extends Option {
     data ?: T
   }

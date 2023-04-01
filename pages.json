@@ -18,7 +18,7 @@
     {
       "path": "pages/news/news",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "消息",
         "enablePullDownRefresh": false
       }
     },
@@ -45,13 +45,19 @@
     "selectedColor": "#c00000",
     "list": [{
       "text": "任务",
-      "pagePath": "pages/task/task"
+      "pagePath": "pages/task/task",
+      "iconPath": "static/tabBar/btn_test_sel@2x(1).png",
+      "selectedIconPath": "static/tabBar/btn_test_sel@2x.png"
     }, {
       "text": "消息",
-      "pagePath": "pages/news/news"
+      "pagePath": "pages/news/news",
+      "iconPath": "static/tabBar/btn_mess_nor@2x.png",
+      "selectedIconPath": "static/tabBar/btn_mess_sel@2x.png"
     }, {
       "text": "我的",
-      "pagePath": "pages/my/my"
+      "pagePath": "pages/my/my",
+      "iconPath": "static/tabBar/btn_mine_nor@2x.png",
+      "selectedIconPath": "static/tabBar/btn_mine_sel@2x.png"
     }, {
       "text": "登录",
       "pagePath": "pages/login/login"

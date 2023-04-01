@@ -1,5 +1,5 @@
 import { Http, BaseConfig, RequestType } from '../interface';
-import { isFunction, isUndefined } from "../../utils";
+import { deepMerge, isFunction, isUndefined } from "../../utils";
 import AxiosInterceptorManager from "./AxiosInterceptorManager"
 
 interface Interceptors {
@@ -11,7 +11,7 @@ export default class Axios {
   private static instance : Axios // Axios实例
   interceptors ! : Interceptors
   private constructor(public baseConfig : BaseConfig) {
-    this.baseConfig = baseConfig  // 全局配置
+    this.baseConfig = { header: {}, ...baseConfig }  // 全局配置
     this.interceptors = {
       request: new AxiosInterceptorManager(),
       response: new AxiosInterceptorManager()
@@ -26,14 +26,19 @@ export default class Axios {
     return Axios.instance
   }
 
+  // 待完成功能，请求拦截>>>请求之前的失败处理 + 响应拦截器 前后处理
   private request<T>(type : RequestType = "GET", url : string, options : any = {}) {
+    
     this.interceptors.request.forEach((item) => {
       const { resolved, rejected } = item
-      // 待处理：请求之前
-      if (isFunction(resolved)) resolved(options)
+      // 请求之前
+      if (isFunction(resolved)) {
+        options = resolved(deepMerge(this.baseConfig, options))
+      }
       // 待处理：请求之前的失败
       // if (isFunction(rejected)) rejected({ message: "错误" }) 
     })
+
     let globalthis = isUndefined(uni) ? wx : uni
     return new Promise<T>((resolve, reject) => {
       globalthis.request({
