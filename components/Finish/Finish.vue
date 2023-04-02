@@ -7,8 +7,9 @@
 
   const taskList = reactive<Tasks.TaskItem[]>([]);
   (async () => {
-    const { data: { items } } = await getTaskList({ status: 2, page: 4, pageSize: 10 })
+    const { data: { items } } = await getTaskList({ status: 6, page: 4, pageSize: 10 })
     if (items) taskList.splice(0, taskList.length, ...items)
+    console.log(items);
   })()
 
   function onPickUp(id : string) {

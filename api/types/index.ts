@@ -43,3 +43,39 @@ export namespace Tasks {
     pages : string
   }
 }
+
+export namespace News {
+  export interface NewsListReq {
+    contentType : number
+    page : number
+    pageSize : number
+  }
+  export interface MessageListRes {
+
+  }
+  export interface InformListRes {
+
+  }
+}
+
+export namespace UserInfo {
+  export interface User {
+    number : string
+    avatar : string
+    name : string
+    phone : string
+  }
+  export interface Car {
+    id : string
+    truckType : string
+    licensePlate : string
+    allowableLoad : string
+    picture : string
+  }
+  export interface Task {
+    taskAmounts : number
+    completedAmounts : number
+    transportMileage : number
+    dailyMileage : Array<{ dateTime : string, mileage : number }>
+  }
+}
